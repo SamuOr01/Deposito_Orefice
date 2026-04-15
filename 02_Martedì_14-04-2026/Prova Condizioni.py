@@ -19,3 +19,17 @@ if x:
     
     pass
 
+
+# match-case
+
+comando = input("Inserisci un comando: ")
+
+match comando:
+    case "start":
+        print("Avvio del programma.")
+    case "stop":
+        print("Arresto del programma.")
+    case "pausa":
+        print("Pausa del programma.")
+    case _:
+        print("Comando non riconosciuto.")
