@@ -1,0 +1,12 @@
+Data: 15/05/2026
+
+le vendite sono:
+1) 15.50€
+2) 150.12€
+3) 63.90€
+
+La somma è: 229.52€
+La media è: 76.51€
+
+le vendite sopra la media sono:
+1) 150.12€

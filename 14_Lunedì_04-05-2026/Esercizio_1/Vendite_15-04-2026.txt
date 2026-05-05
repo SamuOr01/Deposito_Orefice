@@ -1,0 +1,7 @@
+Data: 15/04/2026
+
+le vendite sono:
+1) 6.00€
+
+La somma è: 6.00€
+La media è: 6.00€
