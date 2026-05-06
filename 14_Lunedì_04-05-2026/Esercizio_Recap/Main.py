@@ -85,9 +85,9 @@ while True:
 
 
                     scelta3 = input("\n--- MENU UTENTE ---"
-                                    "1. Aggiungi studente"
-                                    "2. Stampa aula"
-                                    "3. Logout")
+                                    "\n1. Aggiungi studente"
+                                    "\n2. Stampa aula"
+                                    "\n3. Logout\n\n")
 
                     match scelta3:
 
