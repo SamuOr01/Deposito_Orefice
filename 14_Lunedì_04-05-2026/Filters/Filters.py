@@ -22,12 +22,10 @@ filter(funzione_di_filtro, sequenza)
 # Definiamo una funzione chiamata is_even(x) che restituisce True se x è un numero pari
 # e False altrimenti. La funzione filter() applica questa funzione di filtro is_even
 # a ciascun elemento della lista numbers e restituisce solo gli elementi che soddisfano
-# la condizione, cioè i numeri pari. Abbiamo definito una funzione regolare is_even()
-# e l'abbiamo passata come primo argomento alla funzione filter(). La funzione filter()
-# esegue automaticamente la chiamata is_even(x) per ogni elemento x nella sequenza numbers
-# e restituisce un iteratore con i soli elementi che soddisfano la condizione.
-# Infine, abbiamo utilizzato la funzione list() per convertire l'iteratore restituito
-# da filter() in una lista contenente i numeri pari filtrati.
+# la condizione, cioè i numeri pari. La funzione filter() esegue automaticamente la chiamata
+# is_even(x) per ogni elemento x nella sequenza numberse restituisce un iteratore con i soli
+# elementi che soddisfano la condizione. Infine, abbiamo utilizzato la funzione list() per
+# convertire l'iteratore restituito da filter() in una lista contenente i numeri pari filtrati.
 
 def is_even(x):
     return x % 2 == 0
