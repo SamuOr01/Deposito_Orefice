@@ -1,16 +1,30 @@
-# NumPy (Numerical Python) è una libreria fondamentale per il calcolo scientifico in Python.
-# Fornisce supporto per array e matrici multidimensionali, insieme a una vasta raccolta di
-# funzioni matematiche per operare su questi array.È utilizzato estensivamente in vari campi
-# come l'analisi dei dati, la modellazione scientifica machine learning.
+# NumPy (Numerical Python) è una libreria open source fondamentale per il calcolo scientifico in Python.
+# Permette di lavorare con array e matrici multidimensionali, cioè strutture dati che possono
+# avere una o più dimensioni e che risultano molto più efficienti delle normali liste Python
+# sia in termini di memoria che di velocità.
 
-# NumPy è una libreria open-source che offre le seguenti funzionalità principali:
+# Oltre alla gestione degli array, NumPy offre un’ampia gamma di funzioni matematiche
+# che consentono di eseguire operazioni complesse, come calcoli vettoriali e matriciali,
+# algebra lineare, trasformate di Fourier e analisi statistiche.
 
-# - Supporto per array multidimensionali (ndarray), che sono più efficienti
-#   in termini di memoria e prestazioni rispetto alle liste native di Python
-# - Funzioni matematiche avanzate per operare sugli array, inclusi operazioni
-#   vettoriali e matriciali, algebra lineare, trasformate di Fourier e funzioni statistiche.
-# - Strumenti per integrare codice C/C++ e Fortran, per ottimizzare
-#   ulteriormente operazioni.
+# Grazie a queste caratteristiche, è ampiamente utilizzata in ambiti come l’analisi dei dati,
+# la modellazione scientifica e il machine learning. Inoltre, permette di integrare codice scritto
+# in C, C++ e Fortran, migliorando ulteriormente le prestazioni delle operazioni numeriche.
+
+# Numpy ha dei concetti e delle keyword di base:
+# - ndarray: L'oggetto array multidimensionale principale di NumPy. Gli array di NumPy sono più veloci
+#   e più efficienti in termini di memoria rispetto alle liste native di Python.
+# - dtype: Specifica il tipo di dato degli elementi di un array. I tipi di dato comuni
+#   includono int, float, bool, etc.
+# - shape: Una proprietà che restituisce le dimensioni dell'array. Per esempio, un array con 3 righe e
+#   4 colonne avrà una shape di (3, 4).
+# - arange: Una funzione per creare array con valori sequenziali. È simile alla funzione range() di Python,
+#   ma restituisce un array invece di una lista.
+# - reshape: Cambia la shape di un array senza modificarne i dati.
+# - linspace: Genera un array di numeri equamente distribuiti tra un valore iniziale e un valore finale.
+# - random: Modulo per generare array con valori casuali, incluse distribuzioni normali e uniformi.
+# - sum, mean, std: Funzioni per calcolare rispettivamente la somma, la media e la deviazione standard
+#   degli elementi di un array.
 
 # Per iniziare ad usare numpy importiamo il modulo
 import numpy as np
@@ -21,18 +35,18 @@ import numpy as np
 # L'ndarray è l'elemento fondamentale di NumPy.
 # È un array multidimensionale che può contenere dati di un singolo tipo.
 
-# Creazione di un array unidimensionale
+# Creazione di un array monodimensionale
 arr = np.array([1, 2, 3, 4, 5])
 
 # Creazione di un array bidimensionale
 arr2d = np.array([[1, 2, 3], [4, 5, 6]])
 
 # È possibile creare array NumPy utilizzando funzioni come:
-# - np.array()
-# - np.zeros()
-# - np.ones()
-# - np.arange()
-# - np.linspace()
+# - np.array() -> Converte una lista in array
+# - np.zeros() -> Crea un array pieno di zeri, ha come parametro la lunghezza dell'array
+# - np.ones() -> Crea un array pieno di uno, ha come parametro la lunghezza dell'array
+# - np.arange() -> Funziona come la funzione range() con start, stop e step
+# - np.linspace() -> Genera un array di valori distribuiti uniformemente tra un punto iniziale e uno finale
 
 # Questo esempio ne spiega alcuni ma per vederli tutti vai alla fine delle slide,
 # più precisamente la slide NP1*:
@@ -59,7 +73,7 @@ print(arr.dtype) # Output: int32
 # SHAPE
 
 # La shape di un array indica le sue dimensioni.
-# È una tupla che rappresenta il numero di elementi in ciascuna dimensione.
+# È una tupla che rappresenta il numero di elementi in ciascuna dimensione (numero_righe, numero_colonne).
 
 arr = np.array([[1, 2, 3], [4, 5, 6]])
 print(arr.shape) # Output: (2, 3)
@@ -68,7 +82,7 @@ print(arr.shape) # Output: (2, 3)
 # ARANGE
 
 # La funzione arange crea un array contenente una sequenza di numeri,
-# simile a range di Python.
+# simile a range di Python con start, stop e step.
 
 arr = np.arange(10)
 print(arr) # Output: [0 1 2 3 4 5 6 7 8 9]
@@ -96,7 +110,7 @@ print(arr[0]) # Output: 1
 # Slicing
 print(arr[1:3]) # Output: [2 3]
 
-# Boolean Indexing
+# Boolean Indexing -> Usare una condizione booleana come indice
 print(arr[arr > 2]) # Output: [3 4 5]
 
 # Gli array NumPy supportano il slicing e il fancy indexing, permettendo
@@ -125,7 +139,7 @@ print(arr_2d[1:3, 1:3]) # Output: [[ 6 7]
 
 # È una tecnica utilizzata per estrarre una parte di un array o di una sequenza.
 # In NumPy, lo slicing è simile a quello delle liste in Python, ma è molto più potente e versatile.
-# Consente di ottenere subarray di un array esistente senza copiare i dati, il che è efficiente in
+# Consente di ottenere porzioni di un array esistente senza copiare i dati, il che è efficiente in
 # termini di memoria.
 
 # La sintassi base per lo slicing in NumPy è:
@@ -172,8 +186,10 @@ print(arr[indices]) # Output: [10 30 50]
 # DIFFERENZE TRA SLICING E FANCY INDEXING
 
 # Slicing:
-    # - È limitato a selezioni rettangolari.
-    # - Restituisceuna vista dell'array originale
+    # - È limitato a selezioni rettangolari, cioè regolari e contigui dei dati.
+        # - regolari -> con una forma semplice e ordinata
+        # - contigui -> senza “buchi”, cioè tutti gli elementi sono uno accanto all’altro
+    # - Restituisce una vista dell'array originale
     #   (non crea una copia).
     # - Utilizza indici di inizio, fine e passo.
 
