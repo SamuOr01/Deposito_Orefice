@@ -1,6 +1,6 @@
 # Metodo per la creazione dei file txt
 def crea_file_txt(data: str, lista_vendite, somma, media, lista_sopra_media):
-    
+
     # Inizializzazione dei path
     folder_path = "Deposito_Orefice\\14_Lunedì_04-05-2026\\Esercizio_1"
     data_path = data.replace("/","-")
