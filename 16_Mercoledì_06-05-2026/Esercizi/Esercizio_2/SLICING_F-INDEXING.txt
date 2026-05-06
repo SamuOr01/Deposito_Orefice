@@ -1,0 +1,12 @@
+[10 22 29 38 41 36 31 38 20 24 42 20 11 43 18 31 13 20 16 12]
+
+Primi 10 elementi: [10 22 29 38 41 36 31 38 20 24]
+
+Ultimi 5 elementi: [36 31 38 20 24 42 20 11 43 18 31 13 20 16 12]
+
+Elementi dall'indice 5 all'indice 15 (escluso): [36 31 38 20 24 42 20 11 43 18]
+
+Ogni 3° elemento: [10 38 31 24 11 31 16]
+
+Assegno il valore di 99 agli elementi dall'indice 5 all'indice 10 (escluso):
+[10 22 29 38 41 99 99 99 99 99 42 20 11 43 18 31 13 20 16 12]
