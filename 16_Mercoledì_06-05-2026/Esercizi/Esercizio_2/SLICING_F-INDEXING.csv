@@ -1,0 +1,12 @@
+[14 33 15 29 33 31 33 43 22 29 49 35 23 38 43 19 25 24 34 36]
+
+Primi 10 elementi: [14 33 15 29 33 31 33 43 22 29]
+
+Ultimi 5 elementi: [19 25 24 34 36]
+
+Elementi dall'indice 5 all'indice 15 (escluso): [31 33 43 22 29 49 35 23 38 43]
+
+Ogni 3 elementi: [14 29 33 29 23 19 34]
+
+Assegno il valore di 99 agli elementi dall'indice 5 all'indice 10 (escluso):
+[14 33 15 29 33 99 99 99 99 99 49 35 23 38 43 19 25 24 34 36]
