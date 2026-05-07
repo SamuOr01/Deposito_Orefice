@@ -1,5 +1,5 @@
 # In Python esistono alcuni metodi chiamati metodi speciali che derivano
-# da una classe genirca superiore permettono agli oggetti di distinguersi
+# da una classe genirca superiore permettendo agli oggetti di distinguersi
 # potendo dare delle specifiche all'interno della classe
 
 # Questi metodi hanno una sintassi particolare con due underscore
