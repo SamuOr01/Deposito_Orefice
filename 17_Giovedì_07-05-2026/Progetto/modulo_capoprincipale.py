@@ -36,13 +36,12 @@ class Giacca(CapoPrincipale):
     # Rappresentazione stringa dell'oggetto
     def __str__(self):
         return (
-            f"Giacca;"
-            f"{self._codice};"
-            f"{self._nome};"
-            f"{self._tessuto};"
-            f"{self._colore};"
-            f"{self._taglia};"
-            f"{self._prezzo};"
+            f"{self._codice} - "
+            f"{self._nome} - "
+            f"{self._tessuto} - "
+            f"{self._colore} - "
+            f"{self._taglia} - "
+            f"{self._prezzo} - "
             f"{self._numerobottoni}"
         )
 
@@ -80,13 +79,12 @@ class Pantalone(CapoPrincipale):
     # definizione del metodo __str__ per la stampa dell'oggetto
     def __str__(self):
         return (
-            f"Pantalone;"
-            f"{self._codice};"
-            f"{self._nome};"
-            f"{self._tessuto};"
-            f"{self._colore};"
-            f"{self._taglia};"
-            f"{self._prezzo};"
+            f"{self._codice} - "
+            f"{self._nome} - "
+            f"{self._tessuto} - "
+            f"{self._colore} - "
+            f"{self._taglia} - "
+            f"{self._prezzo} - "
             f"{self._tipotaglio}"
         )
 
@@ -113,12 +111,11 @@ class Gilet(CapoPrincipale):
     # Metodo __str__ per rappresentazione testuale dell'oggetto
     def __str__(self):
         return (
-            f"Gilet;"
-            f"{self._codice};"
-            f"{self._nome};"
-            f"{self._tessuto};"
-            f"{self._colore};"
-            f"{self._taglia};"
-            f"{self._prezzo};"
+            f"{self._codice} - "
+            f"{self._nome} - "
+            f"{self._tessuto} - "
+            f"{self._colore} - "
+            f"{self._taglia} - "
+            f"{self._prezzo} - "
             f"{self._reversibile}"
         )
