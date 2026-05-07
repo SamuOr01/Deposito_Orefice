@@ -1,5 +1,6 @@
 from modulo_capoprincipale import Giacca, Pantalone, Gilet
 from modulo_finitura import Cravatta, Papillon, Pochette
+from modulo_gestore_file import salva_catalogo
 
 import random
 
@@ -145,6 +146,7 @@ class Vendite_Random:
                         self._lista_catalogo.append(finitura)
 
                 case "3":
+                    salva_catalogo(self._lista_catalogo)
                     print("Grazie per aver acquistato!")
                     break
 
