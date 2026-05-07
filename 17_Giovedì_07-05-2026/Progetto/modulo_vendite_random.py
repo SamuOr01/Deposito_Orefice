@@ -23,6 +23,7 @@ lista_taglie =[
     "XL",
     "XXL"
 ]
+
 lista_colori = [
     "Nero",
     "Bianco",
@@ -123,17 +124,17 @@ def creazione_casuale(lista_capo_principale, lista_finitura):
                 finitura_scelta = random.choice(lista_finitura)
 
                 if finitura_scelta == "Cravatta":
-                    finitura = Cravatta(codice, "Cravatta", tessuto, colore, larghezza, prezzo_cravatta, tipo_chiusura)
+                    finitura = Cravatta(codice, "Cravatta", tessuto, colore, larghezza, prezzo_cravatta)
                     print(f"Hai scelto: {finitura._nome} - Costo totale: {finitura.costo()}€")
                     lista_catalogo.append(finitura)
 
                 elif finitura_scelta == "Papillon":
-                    finitura = Papillon(codice, "Papillon", tessuto, colore, larghezza, prezzo_papillon, tipo_chiusura)
+                    finitura = Papillon(codice, "Papillon", tessuto, colore, prezzo_papillon, tipo_chiusura)
                     print(f"Hai scelto: {finitura._nome} - Costo totale: {finitura.costo()}€")
                     lista_catalogo.append(finitura)
 
                 elif finitura_scelta == "Pochette":
-                    finitura = Pochette(codice, "Pochette", tessuto, colore, larghezza, prezzo_pochette, tipo_chiusura)
+                    finitura = Pochette(codice, "Pochette", tessuto, colore, prezzo_pochette, ha_piega_decorativa)
                     print(f"Hai scelto: {finitura._nome} - Costo totale: {finitura.costo()}€")
                     lista_catalogo.append(finitura)
             case _:
