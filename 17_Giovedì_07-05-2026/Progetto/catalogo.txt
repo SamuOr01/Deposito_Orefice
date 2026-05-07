@@ -1,0 +1,13 @@
+1 - Gilet - Seta - Blu - XL - 25.0 - False
+2 - Pochette - Cotone - Blu - 10.0 - False
+3 - Giacca - Cotone - Rosso - XL - 40.0 - 3
+4 - Pochette - Lana - Blu - 10.0 - True
+5 - Giacca - Seta - Rosso - XL - 40.0 - 3
+6 - Cravatta - Cotone - Rosso - 15.0 - 9
+7 - Pantalone - Seta - Nero - XXL - 30.0 - slim
+8 - Papillon - Lana - Rosso - 15.0 - a nodo
+9 - Giacca - Lana - Blu - L - 40.0 - 2
+10 - Papillon - Seta - Rosso - 15.0 - a nodo
+11 - Gilet - Cotone - Nero - M - 25.0 - False
+12 - Pochette - Cotone - Blu - 10.0 - True
+13 - Pantalone - Cotone - Rosso - S - 30.0 - slim
