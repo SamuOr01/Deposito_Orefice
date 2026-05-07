@@ -33,6 +33,7 @@ class Giacca(CapoPrincipale):
         
         return self._costo_totale
     
+    # Rappresentazione stringa dell'oggetto
     def __str__(self):
         return (
             f"Giacca;"
@@ -73,7 +74,8 @@ class Pantalone(CapoPrincipale):
             self._costo_totale = tipo_slim + self._prezzo
 
             return self._costo_totale
-            
+    
+    # definizione del metodo __str__ per la stampa dell'oggetto
     def __str__(self):
         return (
             f"Pantalone;"
@@ -106,6 +108,7 @@ class Gilet(CapoPrincipale):
         else:
             return self._costo_totale
     
+    # Metodo __str__ per rappresentazione testuale dell'oggetto
     def __str__(self):
         return (
             f"Gilet;"
