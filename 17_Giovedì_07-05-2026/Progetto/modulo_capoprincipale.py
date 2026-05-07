@@ -32,7 +32,18 @@ class Giacca(CapoPrincipale):
         self.costo_totale = (bonus_bottoni * self._numerobottoni) + self._prezzo
         
         return self._costo_totale
-        
+    
+    def __str__(self):
+        return (
+            f"Giacca;"
+            f"{self._codice};"
+            f"{self._nome};"
+            f"{self._tessuto};"
+            f"{self._colore};"
+            f"{self._taglia};"
+            f"{self._prezzo};"
+            f"{self._numerobottoni}"
+        )
 
 class Pantalone(CapoPrincipale):
     #definizione e ereditarietà attributi
@@ -63,7 +74,17 @@ class Pantalone(CapoPrincipale):
 
             return self._costo_totale
             
-            
+    def __str__(self):
+        return (
+            f"Pantalone;"
+            f"{self._codice};"
+            f"{self._nome};"
+            f"{self._tessuto};"
+            f"{self._colore};"
+            f"{self._taglia};"
+            f"{self._prezzo};"
+            f"{self._tipotaglio}"
+        )
 
 class Gilet(CapoPrincipale):
     #definizione e ereditarietà attributi
@@ -83,4 +104,16 @@ class Gilet(CapoPrincipale):
             return self._costo_totale
         
         else:
-            return self._costo_totale   
+            return self._costo_totale
+    
+    def __str__(self):
+        return (
+            f"Gilet;"
+            f"{self._codice};"
+            f"{self._nome};"
+            f"{self._tessuto};"
+            f"{self._colore};"
+            f"{self._taglia};"
+            f"{self._prezzo};"
+            f"{self._reversibile}"
+        )
