@@ -29,6 +29,17 @@ class Cravatta(Finitura):
         self._costo_totale = self._prezzo + (self._larghezza * costo_per_larghezza)
         return self._costo_totale
 
+    def __str__(self):
+        return (
+            f"Cravatta;"
+            f"{self.get_codice()};"
+            f"{self._nome};"
+            f"{self._materiale};"
+            f"{self._colore};"
+            f"{self._prezzo};"
+            f"{self._larghezza}"
+        )
+
 class Papillon(Finitura):
     # Attributi
     def __init__(self, codice: int, nome: str, materiale: str, colore: str, prezzo: float, tipo_chiusura: str):
@@ -47,6 +58,17 @@ class Papillon(Finitura):
         else:
             return self._prezzo
 
+    def __str__(self):
+        return (
+            f"Papillon;"
+            f"{self.get_codice()};"
+            f"{self._nome};"
+            f"{self._materiale};"
+            f"{self._colore};"
+            f"{self._prezzo};"
+            f"{self._tipo_chiusura}"
+        )
+
 class Pochette(Finitura):
     # Attributi
     def __init__(self, codice: int, nome: str, materiale: str, colore: str, prezzo: float, piega_decorativa: bool):
@@ -60,3 +82,14 @@ class Pochette(Finitura):
             return self._costo_totale
         else:
             return self._prezzo
+
+    def __str__(self):
+        return (
+            f"Pochette;"
+            f"{self.get_codice()};"
+            f"{self._nome};"
+            f"{self._materiale};"
+            f"{self._colore};"
+            f"{self._prezzo};"
+            f"{self._piega_decorativa}"
+        )
