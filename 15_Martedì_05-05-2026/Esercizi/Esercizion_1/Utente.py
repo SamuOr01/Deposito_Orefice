@@ -1,8 +1,5 @@
-# Libreria per definire le classi astratte
-from abc import ABC, abstractmethod
-
-# classe astratta
-class Utente(ABC):
+# classe Genitore Utente
+class Utente():
     def __init__(self, username, password):
         self.__username = username
         self.__password = password
@@ -13,8 +10,3 @@ class Utente(ABC):
 
     def get_password(self):
         return self.__password
-
-    # Metodo astratto
-    @abstractmethod
-    def login(self):
-        pass
