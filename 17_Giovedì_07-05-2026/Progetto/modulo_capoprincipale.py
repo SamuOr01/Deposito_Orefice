@@ -31,7 +31,7 @@ class Giacca(CapoPrincipale):
         bonus_bottoni = 2.50
         self.costo_totale = (bonus_bottoni * self._numerobottoni) + self._prezzo
         
-        return self._costo_totale
+        return self._prezzo
     
     # Rappresentazione stringa dell'oggetto
     def __str__(self):
@@ -74,6 +74,8 @@ class Pantalone(CapoPrincipale):
             self._costo_totale = tipo_slim + self._prezzo
 
             return self._costo_totale
+        else:
+            return self._prezzo
     
     # definizione del metodo __str__ per la stampa dell'oggetto
     def __str__(self):
@@ -106,7 +108,7 @@ class Gilet(CapoPrincipale):
             return self._costo_totale
         
         else:
-            return self._costo_totale
+            return self._prezzo
     
     # Metodo __str__ per rappresentazione testuale dell'oggetto
     def __str__(self):
