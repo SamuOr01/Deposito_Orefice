@@ -35,12 +35,11 @@ class Cravatta(Finitura):
     # Metodo per rappresentare la cravatta come stringa
     def __str__(self):
         return (
-            f"Cravatta;"
-            f"{self.get_codice()};"
-            f"{self._nome};"
-            f"{self._materiale};"
-            f"{self._colore};"
-            f"{self._prezzo};"
+            f"{self.get_codice()} - "
+            f"{self._nome} - "
+            f"{self._materiale} - "
+            f"{self._colore} - "
+            f"{self._prezzo} - "
             f"{self._larghezza}"
         )
 
@@ -67,12 +66,11 @@ class Papillon(Finitura):
     # Metodo per rappresentare il papillon come stringa
     def __str__(self):
         return (
-            f"Papillon;"
-            f"{self.get_codice()};"
-            f"{self._nome};"
-            f"{self._materiale};"
-            f"{self._colore};"
-            f"{self._prezzo};"
+            f"{self.get_codice()} - "
+            f"{self._nome} - "
+            f"{self._materiale} - "
+            f"{self._colore} - "
+            f"{self._prezzo} - "
             f"{self._tipo_chiusura}"
         )
 
@@ -96,11 +94,10 @@ class Pochette(Finitura):
     # Metodo per rappresentare la pochette come stringa
     def __str__(self):
         return (
-            f"Pochette;"
-            f"{self.get_codice()};"
-            f"{self._nome};"
-            f"{self._materiale};"
-            f"{self._colore};"
-            f"{self._prezzo};"
+            f"{self.get_codice()} - "
+            f"{self._nome} - "
+            f"{self._materiale} - "
+            f"{self._colore} - "
+            f"{self._prezzo} - "
             f"{self._piega_decorativa}"
         )
