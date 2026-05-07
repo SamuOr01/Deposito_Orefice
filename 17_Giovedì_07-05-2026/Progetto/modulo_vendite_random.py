@@ -1,5 +1,5 @@
 from modulo_capoprincipale import Giacca, Pantalone, Gilet
-from Modulo_Finitura import Cravatta, Papillon, Pochette
+from modulo_finitura import Cravatta, Papillon, Pochette
 
 import random
 
