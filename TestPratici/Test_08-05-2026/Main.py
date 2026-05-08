@@ -24,7 +24,7 @@ while True:
                                 "\n3. Mostra tutte le classi"
                                 "\n4. Elimina una classe"
                                 "\n5. Esci"
-                                "\n\n> \n"
+                                "\n\n> "
                                 )
 
                 match scelta_2:
@@ -48,7 +48,8 @@ while True:
                         pass
 
                     case "4":
-                        pass
+                        nome_classe = input("\nInserisci il nome della classe da eliminare: ")
+                        gf.elimina_classe(nome_classe)
 
                     case "5":
                         print("Tornando al menu principale...")
