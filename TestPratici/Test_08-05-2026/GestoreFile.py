@@ -1,4 +1,3 @@
-
 # FUNZIONI PER LA GESTIONE DELLE CLASSI
 
 # Funzione per scrivere i dati nel file
@@ -15,7 +14,7 @@ def crea_classe(numero_studenti, nome):
         }
         classe.append(studente)
     
-    with open(f"Classe_{nome}.txt", "w", encoding="utf-8") as file:
+    with open(f"Classi\\Classe_{nome}.txt", "w", encoding="utf-8") as file:
         for studente in classe:
             file.write(f"{studente['id']},{studente['nome']},{studente['cognome']},{studente['età']},{studente['classe']},{studente['media']}\n")
     
@@ -24,7 +23,7 @@ def crea_classe(numero_studenti, nome):
 # Funzione per leggere i dati dal file
 def mostra_classe(nome):
     classe = []
-    with open(f"Classe_{nome}.txt", "r", encoding="utf-8") as file:
+    with open(f"Classi\\Classe_{nome}.txt", "r", encoding="utf-8") as file:
         righe = file.readlines()
 
         for riga in righe:
