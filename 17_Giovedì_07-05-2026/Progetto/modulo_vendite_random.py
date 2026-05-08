@@ -7,7 +7,9 @@ import random
 # Creo classe Vendite Random
 class Vendite_Random:
 
-    def __init__(self):
+    def __init__(self, lista_capi, lista_rifiniture):
+        self._catalogo_capi = lista_capi
+        self._catalogo_rifiniture = lista_rifiniture
 
         # Lista per scelta degli oggetti
         self._lista_capo_principale = [
@@ -78,7 +80,6 @@ class Vendite_Random:
 
         # Codice progressivo per identificare univocamente ogni capo/finitura
         self._codice = 0
-        self._lista_catalogo = []
 
     # Metodo per generare caratteristiche casuali per i capi principali
     def random_caratteristiche_capo_principale(self):
@@ -127,17 +128,17 @@ class Vendite_Random:
                     if capo_principale_scelto == "Giacca":
                         capo_principale = Giacca(codice, "Giacca", tessuto, colore, taglia, self._prezzo_giacca, numero_bottoni)
                         print(f"Hai scelto: {capo_principale._nome} - Costo totale: {capo_principale.costo()}€")
-                        self._lista_catalogo.append(capo_principale)
+                        self._catalogo_capi.append(capo_principale)
 
                     elif capo_principale_scelto == "Pantalone":
                         capo_principale = Pantalone(codice, "Pantalone", tessuto, colore, taglia, self._prezzo_pantalone, tipo_taglio)
                         print(f"Hai scelto: {capo_principale._nome} - Costo totale: {capo_principale.costo()}€")
-                        self._lista_catalogo.append(capo_principale)
+                        self._catalogo_capi.append(capo_principale)
 
                     elif capo_principale_scelto == "Gilet":
                         capo_principale = Gilet(codice, "Gilet", tessuto, colore, taglia, self._prezzo_gilet, è_reversibile)
                         print(f"Hai scelto: {capo_principale._nome} - Costo totale: {capo_principale.costo()}€")
-                        self._lista_catalogo.append(capo_principale)
+                        self._catalogo_capi.append(capo_principale)
 
                 # Creazione casuale di una finitura in base alla scelta dell'utente
                 case "2":
@@ -147,21 +148,22 @@ class Vendite_Random:
                     if finitura_scelta == "Cravatta":
                         finitura = Cravatta(codice, "Cravatta", tessuto, colore, self._prezzo_cravatta, larghezza)
                         print(f"Hai scelto: {finitura._nome} - Costo totale: {finitura.costo()}€")
-                        self._lista_catalogo.append(finitura)
+                        self._catalogo_rifiniture.append(finitura)
 
                     elif finitura_scelta == "Papillon":
                         finitura = Papillon(codice, "Papillon", tessuto, colore, self._prezzo_papillon, tipo_chiusura)
                         print(f"Hai scelto: {finitura._nome} - Costo totale: {finitura.costo()}€")
-                        self._lista_catalogo.append(finitura)
+                        self._catalogo_rifiniture.append(finitura)
 
                     elif finitura_scelta == "Pochette":
                         finitura = Pochette(codice, "Pochette", tessuto, colore, self._prezzo_pochette, ha_piega_decorativa)
                         print(f"Hai scelto: {finitura._nome} - Costo totale: {finitura.costo()}€")
-                        self._lista_catalogo.append(finitura)
+                        self._catalogo_rifiniture.append(finitura)
 
                 # Esci e salva il catalogo su file
                 case "3":
-                    salva_catalogo(self._lista_catalogo)
+                    lista_catalogo = self._catalogo_capi + self._catalogo_rifiniture
+                    salva_catalogo(lista_catalogo)
                     print("Grazie per aver acquistato!")
                     break
 
