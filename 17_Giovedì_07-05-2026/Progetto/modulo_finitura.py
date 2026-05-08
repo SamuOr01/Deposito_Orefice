@@ -9,12 +9,40 @@ class Finitura:
         self._colore = colore
         self._prezzo = prezzo
 
-    # Getter del codice
-    def get_codice(self):
-        return self.__codice
-
     # Metodi
     def costo(self):
+        return self._prezzo
+    
+     # Getter del codice
+    def get_codice(self):
+        return self.__codice
+    
+    # Getter e setter nome
+    def get_nome(self): 
+        return self._nome
+    def set_nome(self, nuovo_nome): 
+        self._nome = nuovo_nome
+        return self._nome
+
+    # Getter e setter tessuto
+    def get_tessuto(self): 
+        return self._tessuto
+    def set_tessuto(self, nuovo_tessuto): 
+        self._tessuto = nuovo_tessuto
+        return self._tessuto
+    
+    # Getter e setter colore
+    def get_colore(self): 
+        return self._colore
+    def set_colore(self, nuovo_colore): 
+        self._colore = nuovo_colore
+        return self._colore
+
+    # Getter e setter prezzo
+    def get_prezzo(self): 
+        return self._prezzo
+    def set_prezzo(self, nuovo_prezzo): 
+        self._prezzo = nuovo_prezzo
         return self._prezzo
 
 # Classi figlie
