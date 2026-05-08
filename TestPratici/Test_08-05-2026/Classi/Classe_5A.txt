@@ -1,0 +1,2 @@
+1,Pippo,Franco,15,5A,0
+2,Linu,U Finu,12,5A,0
