@@ -15,6 +15,51 @@ class CapoPrincipale:
     def costo(self):
         return self._prezzo
     
+    #GET E SET ATTRIBUTI
+    #codice
+    def get_codice(self): 
+        return self._codice
+    
+    #nome
+    def get_nome(self): 
+        return self._nome
+    
+    def set_nome(self, nuovo_nome): 
+        self._nome = nuovo_nome
+        return self._nome
+
+    #tessuto
+    def get_tessuto(self): 
+        return self._tessuto
+    
+    def set_tessuto(self, nuovo_tessuto): 
+        self._tessuto = nuovo_tessuto
+        return self._tessuto
+    
+    #colore
+    def get_colore(self): 
+        return self._colore
+    
+    def set_colore(self, nuovo_colore): 
+        self._colore = nuovo_colore
+        return self._colore
+
+    #taglia
+    def get_taglia(self): 
+        return self._taglia
+    
+    def set_taglia(self, nuovo_taglia): 
+        self._taglia = nuovo_taglia
+        return self._taglia
+
+    #prezzo
+    def get_prezzo(self): 
+        return self._prezzo
+    
+    def set_prezzo(self, nuovo_prezzo): 
+        self._prezzo = nuovo_prezzo
+        return self._prezzo
+    
 #CLASSI FIGLIE
 
 class Giacca(CapoPrincipale):
@@ -31,7 +76,7 @@ class Giacca(CapoPrincipale):
         bonus_bottoni = 2.50
         self.costo_totale = (bonus_bottoni * self._numerobottoni) + self._prezzo
         
-        return self._prezzo
+        return self.costo_totale
     
     # Rappresentazione stringa dell'oggetto
     def __str__(self):
