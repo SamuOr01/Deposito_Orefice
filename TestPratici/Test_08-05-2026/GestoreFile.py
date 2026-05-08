@@ -22,7 +22,7 @@ def crea_classe(numero_studenti, nome):
     return classe
 
 # Funzione per leggere i dati dal file
-def leggi_classe(nome):
+def mostra_classe(nome):
     classe = []
     with open(f"Classe_{nome}.txt", "r", encoding="utf-8") as file:
         righe = file.readlines()
@@ -32,19 +32,16 @@ def leggi_classe(nome):
 
             studente = {
                 "id": dati[0],
-                "nome": dati[0],
-                "cognome": dati[1],
-                "età": dati[2],
-                "classe": dati[3],
-                "media": dati[4]
+                "nome": dati[1],
+                "cognome": dati[2],
+                "età": dati[3],
+                "classe": dati[4],
+                "media": dati[5]
             }
 
             classe.append(studente)
 
     return classe
-
-def mostra_classe():
-    pass
 
 def elimina_classe():
     pass
