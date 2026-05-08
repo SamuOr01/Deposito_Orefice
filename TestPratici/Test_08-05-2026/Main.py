@@ -33,7 +33,8 @@ while True:
                     )
 
         case "3":
-            pass
+            print("\nClassi disponibili:")
+            gf.mostra_tutte_classi()
 
         case "4":
             nome_classe = input("\nInserisci il nome della classe da eliminare: ")
