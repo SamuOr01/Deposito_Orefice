@@ -4,7 +4,7 @@ from modulo_gestione import GestioneSartoria
 from modulo_vendite_random import Vendite_Random
 
 sartoria = GestioneSartoria()
-venditore_random = Vendite_Random()
+venditore_random = Vendite_Random(sartoria.get_lista_capi(), sartoria.get_lista_rifiniture())
 
 #MAIN MENU
 while True:
