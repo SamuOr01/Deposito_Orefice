@@ -1,3 +1,5 @@
+import os
+
 # FUNZIONI PER LA GESTIONE DELLE CLASSI
 
 # Funzione per scrivere i dati nel file
@@ -13,11 +15,11 @@ def crea_classe(numero_studenti, nome):
             "media": input(f"Inserisci la media dello studente {i+1}: ")
         }
         classe.append(studente)
-    
+
     with open(f"Classi\\Classe_{nome}.txt", "w", encoding="utf-8") as file:
         for studente in classe:
             file.write(f"{studente['id']},{studente['nome']},{studente['cognome']},{studente['età']},{studente['classe']},{studente['media']}\n")
-    
+
     return classe
 
 # Funzione per leggere i dati dal file
@@ -42,7 +44,11 @@ def mostra_classe(nome):
 
     return classe
 
-def elimina_classe():
-    pass
+def elimina_classe(nome):
+    if os.path.exists(f"Classi\\Classe_{nome}.txt"):
+        os.remove(f"Classi\\Classe_{nome}.txt")
+        print(f"\nClasse {nome} eliminata con successo.")
+    else:
+        print(f"\nClasse {nome} non trovata.")
 
 # FUNZIONI PER LA GESTIONE DEGLI STUDENTI

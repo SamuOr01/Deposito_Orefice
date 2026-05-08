@@ -1,5 +1,0 @@
-1,Pippo,Franco,10,5A,0
-2,Pip,Pup,12,5A,2
-3,Linu,U Finu,13,5A,3
-4,Mimmo,Passalacqua,85,5A,-99
-5,Luca,Geraldi,3,5A,2
