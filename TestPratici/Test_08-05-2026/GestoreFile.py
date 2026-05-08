@@ -44,11 +44,17 @@ def mostra_classe(nome):
 
     return classe
 
+def mostra_tutte_classi():
+
+    for classe in os.listdir("Classi"):
+
+        nome = classe.replace("Classe_", "").replace(".txt", "")
+
+        print("-", nome)
+
 def elimina_classe(nome):
     if os.path.exists(f"Classi\\Classe_{nome}.txt"):
         os.remove(f"Classi\\Classe_{nome}.txt")
         print(f"\nClasse {nome} eliminata con successo.")
     else:
         print(f"\nClasse {nome} non trovata.")
-
-# FUNZIONI PER LA GESTIONE DEGLI STUDENTI
