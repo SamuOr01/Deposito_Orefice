@@ -1,2 +1,20 @@
-1,Pippo,Franco,15,5A,0
-2,Linu,U Finu,12,5A,0
+1 | Luca | Rossi | 17 | 5A | 7.8
+2 | Marco | Bianchi | 18 | 5A | 6.5
+3 | Anna | Verdi | 17 | 5A | 8.2
+4 | Giulia | Ferrari | 18 | 5A | 7.0
+5 | Matteo | Russo | 17 | 5A | 6.8
+6 | Sara | Gallo | 18 | 5A | 9.0
+7 | Davide | Conti | 17 | 5A | 5.9
+8 | Elisa | Romano | 18 | 5A | 7.3
+9 | Andrea | Costa | 17 | 5A | 6.7
+10 | Sofia | Greco | 18 | 5A | 8.5
+11 | Francesco | Lombardi | 17 | 5A | 7.1
+12 | Martina | Moretti | 18 | 5A | 8.0
+13 | Alessandro | Barbieri | 17 | 5A | 6.2
+14 | Chiara | Marino | 18 | 5A | 7.6
+15 | Simone | Rizzo | 17 | 5A | 6.9
+16 | Valentina | Ricci | 18 | 5A | 8.7
+17 | Tommaso | Giordano | 17 | 5A | 5.8
+18 | Federica | Bruno | 18 | 5A | 7.9
+19 | Lorenzo | De Luca | 17 | 5A | 6.4
+20 | Giacomo | Serra | 18 | 5A | 8.1
