@@ -1,35 +1,86 @@
 /*
-È un operatore che seleziona i valori (come: numeri, testo o date)
-all'interno di un determinato intervallo. L'operatore è inclusivo
-ovvero sono inclusi i valori di inizio e fine.
+L’operatore BETWEEN viene utilizzato per selezionare valori compresi
+all’interno di un intervallo.
+
+Può essere applicato a:
+
+- valori numerici
+- stringhe
+- date
+
+Una caratteristica importante è che BETWEEN è inclusivo, cioè include
+sia il valore iniziale che quello finale dell’intervallo.
+
+Sintassi generale
 */
 
 SELECT column_name(s)
 FROM table_name
-WHERE column_name
-    BETWEEN value1 AND value2;
+WHERE column_name BETWEEN value1 AND value2;
 
---Un esempio di utilizzo con più condizioni:
+
+/*
+BETWEEN può essere combinato con altre clausole logiche come AND o
+operatori come IN.
+
+Esempio:
+*/
+
 SELECT *
 FROM Products
-WHERE Price
-    BETWEEN 10 AND 20 AND CategoryID NOT IN (1,2,3);
+WHERE Price BETWEEN 10 AND 20
+AND CategoryID NOT IN (1, 2, 3);
 
---Un esempio utilizzando le date:
+/*
+Questa query:
+
+- seleziona i prodotti con prezzo tra 10 e 20;
+- esclude quelli appartenenti alle categorie 1, 2 e 3.
+*/
+
+
+/*
+BETWEEN è molto utilizzato anche con i valori di tipo data.
+
+Esempio:
+*/
+
 SELECT *
 FROM Orders
-WHERE OrderDate
-    BETWEEN #07/01/1996# AND #07/31/1996#;
+WHERE OrderDate BETWEEN '1996-07-01' AND '1996-07-31';
 
---Un'altra sintassi per le date è:
+--Questa query restituisce tutti gli ordini effettuati nel mese di luglio 1996.
+
+
+/*
+A seconda del DBMS, le date possono essere scritte in modi diversi.
+
+Esempio (formato alternativo):
+*/
+
 SELECT *
 FROM Orders
-WHERE OrderDate
-    BETWEEN '1996-07-01' AND '1996-07-31';
+WHERE OrderDate BETWEEN #07/01/1996# AND #07/31/1996#;
 
---Un esempio utilizzando un ORDER BY:
+--Oppure nel formato standard ISO (consigliato):
+
+SELECT *
+FROM Orders
+WHERE OrderDate BETWEEN '1996-07-01' AND '1996-07-31';
+
+
+/*
+È possibile negare l’intervallo utilizzando NOT BETWEEN.
+
+Esempio con Order By e Not Between:
+*/
+
 SELECT *
 FROM Products
-WHERE ProductName
-    NOT BETWEEN 'Carnarvon Tigers' AND 'Mozzarella di Giovanni'
+WHERE ProductName NOT BETWEEN 'Carnarvon Tigers' AND 'Mozzarella di Giovanni'
 ORDER BY ProductName;
+
+/*
+Questa query restituisce tutti i prodotti il cui nome non rientra nell’intervallo
+alfabetico specificato.
+*/

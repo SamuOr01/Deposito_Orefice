@@ -1,7 +1,15 @@
 /*
-L'istruzione SELECT TOP serve per specificare il numero di record da restituire.
-Non tutti i sistemi di database supportano questa istruzione. MySQL supporta l'operazione
-LIMIT per selezionare un numero limitato di record.
+L’istruzione utilizzata per limitare il numero di record restituiti da una
+query dipende dal sistema di database utilizzato.
+
+In alcuni DBMS esiste SELECT TOP, mentre in altri (come MySQL) si utilizza LIMIT.
+
+La clausola SELECT TOP è utilizzata in alcuni sistemi (ad esempio SQL Server)
+per specificare quanti record restituire.
+
+Tuttavia, non è supportata da tutti i database.
+
+Nel caso di MySQL si utilizza invece LIMIT.
 */
 
 SELECT column_name
@@ -10,10 +18,21 @@ WHERE condition
 LIMIT number;
 
 /*
-LIMIT quindi ci permette di indicare il numero massimo di record da
-recuperare da un database, questa operazione tendenzialmente si esegue
-per tabelle con un grande numero di record ottimizzando le prestazioni.
+LIMIT indica a SQL di restituire solo un numero massimo di righe.
+
+Questo è particolarmente utile quando:
+
+- la tabella contiene molti record;
+- si vogliono visualizzare solo anteprime dei dati;
+- si ottimizzano le prestazioni delle query;
+- si lavora con paginazione dei risultati.
 */
 
+--Esempio
 SELECT * FROM Customers
 LIMIT 50;
+
+/*
+Questa query restituisce al massimo 50 record dalla tabella Customers.
+Se la tabella contiene meno di 50 righe, verranno restituite tutte.
+*/

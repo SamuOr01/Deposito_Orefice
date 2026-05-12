@@ -1,19 +1,25 @@
 /*
-Gli ALIAS SQL servono per assegnare un nome temporaneo ad un elemento
-come una tabella, una colonna, il risultato di una funzione ecc ecc...;
-In questo modo possiamo richiamare direttamente il nome temporaneo assegnato
-all'elemento.
+Gli alias in SQL servono per assegnare un nome temporaneo a elementi
+di una query, come:
 
-Gli ALIAS possono essere utili quando:
+- colonne
+- tabelle
+- risultati di funzioni o espressioni
 
-- sono coinvolte più tabelle in una QUERY;
-- vengono usate le funzioni in una QUERY;
-- i nomi delle colonne sono grandi o poco leggibili;
-- due o più colonne vengono combinate insieme;
+Questo nome temporaneo viene utilizzato solo durante l’esecuzione
+della query e non modifica la struttura del database.
 
-Per assegnare un ALIAS viene usata la parola chiave AS quando andiamo a
-selezione o richiamare in SELECT o in FROM l'elemento a cui assegnare il nome:
+Gli alias sono utili in diverse situazioni:
+
+- quando una query coinvolge più tabelle;
+- quando si utilizzano funzioni o calcoli;
+- quando i nomi delle colonne sono lunghi o poco leggibili;
+- quando si combinano più colonne in un’unica espressione.
+
+Per creare un alias si utilizza la parola chiave AS.
+
+Sintassi generale:
 */
 
-SELECT column_name AS alias_columName
-FROM table_name AS alias_tableName;
+SELECT column_name AS alias_name
+FROM table_name AS alias_table;

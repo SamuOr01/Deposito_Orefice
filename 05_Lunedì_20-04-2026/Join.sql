@@ -1,60 +1,90 @@
 /*
-È una clausula che viene utilizzata per combinare righe da due o più tabelle,
-in base a una colonna correlata tra di loro.
-*/
+Le JOIN sono clausole utilizzate per combinare dati provenienti da due o più tabelle.
 
-SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
-FROM Orders
-INNER JOIN Customers
-    ON Orders.CustomerID=Customers.CustomerID;
+L’unione avviene tramite una colonna comune tra le tabelle, chiamata generalmente:
 
-/*
-In questo esempio stiamo andando a prendere i record che hanno lo stesso valore
-CustomerID unendo i valori selezionati generando un result-set con 3 colonne:
+chiave primaria (Primary Key);
+chiave esterna (Foreign Key).
 
-1.OrderID della tabella orders
-2.CustomerName della tabella customers
-3.OrderDate della tabella orders
-*/
+Le JOIN sono fondamentali nei database relazionali, perché permettono di collegare
+informazioni distribuite in più tabelle.
 
-/*
 Ci sono 4 tipi di join:
 
-- (INNER) JOIN: restituisce record con valori in comune
-- LEFT (OUTER) JOIN: restituisce tutti i record della tabella di sinistra
-  e i record con valori in comune
-- RIGHT (OUTER) JOIN: restituisce tutti i record della tabella di destra
-  e i record con valori in comune
-- FULL (OUTER) JOIN: restituisce tutti i record quando è presente una
-  corrispondenza in uno dei due a sinistra o nella tabella a destra
+| Tipo         | Descrizione                                       |
+| ------------ | ------------------------------------------------- |
+| `INNER JOIN` | Restituisce solo i record corrispondenti          |
+| `LEFT JOIN`  | Restituisce tutti i record della tabella sinistra |
+| `RIGHT JOIN` | Restituisce tutti i record della tabella destra   |
+| `FULL JOIN`  | Restituisce tutti i record di entrambe le tabelle |
+| `CROSS JOIN` | Restituisce tutte le combinazioni possibili       |
+
+
+La clausola INNER JOIN restituisce solamente i record che possiedono valori corrispondenti in entrambe le tabelle.
+
+Sintassi generale:
 */
-
-
---INNER JOIN seleziona i record con valori corrispondenti in entrambe le tabelle.
 
 SELECT column_name(s)
 FROM table1
 INNER JOIN table2
     ON table1.column_name = table2.column_name;
 
+--La clausola ON specifica la condizione di collegamento tra le due tabelle.
+
 --Esempio di utilizzo:
-SELECT Orders.OrderID, Customers.CustomerName
+SELECT Orders.OrderID,
+       Customers.CustomerName,
+       Orders.OrderDate
 FROM Orders
 INNER JOIN Customers
     ON Orders.CustomerID = Customers.CustomerID;
 
---Esempio di utilizzo con più join (da notare le parentesi):
-SELECT Orders.OrderID, Customers.CustomerName, Shippers.ShipperName
+/*
+Questa query:
+
+- collega la tabella Orders con la tabella Customers;
+- utilizza il campo CustomerID come relazione;
+- restituisce solo i record con un CustomerID presente in entrambe le tabelle.
+
+Il result-set finale contiene:
+
+- OrderID della tabella Orders;
+- CustomerName della tabella Customers;
+- OrderDate della tabella Orders.
+*/
+
+--SQL permette di concatenare più JOIN nella stessa query.
+
+SELECT Orders.OrderID,
+       Customers.CustomerName,
+       Shippers.ShipperName
 FROM ((Orders
 INNER JOIN Customers
     ON Orders.CustomerID = Customers.CustomerID)
 INNER JOIN Shippers
     ON Orders.ShipperID = Shippers.ShipperID);
 
+/*
+Questa query collega:
+
+- Orders
+- Customers
+- Shippers
+
+in un unico result-set.
+*/
+
 
 /*
-Questi join restituiscono i record della tabella di riferimento (Left o Right
-in base al tipo di join) insieme ai record che con i valori corrispondenti.
+La clausola LEFT JOIN restituisce:
+
+- tutti i record della tabella di sinistra;
+- i record corrispondenti della tabella di destra.
+
+Se non esiste corrispondenza, i valori mancanti vengono riempiti con NULL.
+
+Sintassi:
 */
 
 SELECT column_name(s)
@@ -62,19 +92,76 @@ FROM table1
 LEFT JOIN table2
     ON table1.column_name = table2.column_name;
 
-/*
-Un esempio dove recuperiamo e ordiniamo tutti i clienti in aggiunta
-recuperiamo anche l'eventuale id dell'ordine:
-*/
-
-SELECT Orders.OrderID, Customers.CustomerName
+--Esempio:
+SELECT Orders.OrderID,
+       Customers.CustomerName
 FROM Customers
 LEFT JOIN Orders
-    ON Customers.CustomerID=Orders.CustomerID
+    ON Customers.CustomerID = Orders.CustomerID
 ORDER BY Customers.CustomerName;
 
+/*
+Questa query:
 
---CROSS JOIN restituisce tutti i record da entrambe le tabelle.
+- restituisce tutti i clienti;
+- mostra l’eventuale ordine associato;
+- mantiene nel risultato anche i clienti senza ordini.
+
+
+RIGHT JOIN funziona in modo opposto a LEFT JOIN.
+
+Restituisce:
+
+tutti i record della tabella di destra;
+i record corrispondenti della tabella di sinistra.
+
+Sintassi:
+*/
+
+SELECT column_name(s)
+FROM table1
+RIGHT JOIN table2
+    ON table1.column_name = table2.column_name;
+
+
+/*
+FULL OUTER JOIN restituisce:
+
+- tutti i record della tabella sinistra;
+- tutti i record della tabella destra;
+- unendo quelli che hanno corrispondenze.
+
+Le righe senza corrispondenza vengono completate con valori NULL.
+
+Sintassi:
+*/
+
+SELECT column_name(s)
+FROM table1
+FULL OUTER JOIN table2
+    ON table1.column_name = table2.column_name;
+
+/*
+Nota: MySQL non supporta direttamente FULL OUTER JOIN.
+Spesso viene simulato combinando LEFT JOIN e RIGHT JOIN con UNION.
+*/
+
+/*
+La clausola CROSS JOIN restituisce tutte le combinazioni possibili
+tra le righe delle due tabelle.
+
+Sintassi:
+*/
+
 SELECT column_name(s)
 FROM table1
 CROSS JOIN table2;
+
+/*
+Se:
+
+- la prima tabella contiene 3 righe;
+- la seconda contiene 4 righe;
+
+il risultato avrà 3 × 4 = 12 righe.
+*/
