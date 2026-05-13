@@ -1,6 +1,7 @@
 import numpy as np
 from numpy import random
 
+path_folder = "Deposito_Orefice\\19_Martedì_12-05-2026\\Esercizi_Recap\\Esercizio_5"
 
 # Ciclo per rendere ripetibile il programma
 while True:
@@ -66,7 +67,7 @@ while True:
             case "S":
 
                 # Scrive i dati nel file txt
-                with open("Deposito_Orefice\\19_Martedì_12-05-2026\\Esercizi_Recap\\Esercizio_5\\Dati.txt", "w", encoding="utf-8") as file:
+                with open(f"{path_folder}\\Dati.txt", "w", encoding="utf-8") as file:
                     file.write(f"Array di 50 numeri equidistanti tra 0 e 10:\n\n{array_eq}")
                     file.write(f"\n\nArray di 50 numeri casuali compresi tra 0 e 1:\n\n{array_random}")
                     file.write(f"\n\nSomma dei due array elemento per elemento per ottenere un nuovo array:\n\n{sum_array}")
