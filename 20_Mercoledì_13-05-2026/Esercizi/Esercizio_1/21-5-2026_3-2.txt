@@ -1,0 +1,38 @@
+Matrice (3, 3):
+
+[[3 4 1]
+ [7 3 6]
+ [2 1 5]]
+
+Sotto-Matrice centrale (2, 2):
+
+[[3 4]
+ [7 3]]
+
+Matrice Trasposta (3, 3):
+
+[[3 7 2]
+ [4 3 1]
+ [1 6 5]]
+
+La somma degli elementi della matrice (3, 3): 32
+
+Il prodotto degli elementi delle matrici (3, 3):
+
+[[24 20  7]
+ [21  3 30]
+ [ 8  6 15]]
+
+La media degli elementi della matrice (3, 3): 3.5555555555555554
+
+Il determinante della matrice (3, 3): -63.99999999999998Matrice Inversa (3, 3):
+
+[[-0.140625  0.296875 -0.328125]
+ [ 0.359375 -0.203125  0.171875]
+ [-0.015625 -0.078125  0.296875]]
+
+Risultato della funzione log applicata alla matrice (3, 3):
+
+[[1.09861229 1.38629436 0.        ]
+ [1.94591015 1.09861229 1.79175947]
+ [0.69314718 0.         1.60943791]]

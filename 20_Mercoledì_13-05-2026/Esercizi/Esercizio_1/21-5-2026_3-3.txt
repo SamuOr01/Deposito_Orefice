@@ -1,0 +1,3 @@
+Elementi della matrice (3, 3) maggiori di 15:
+
+[]
